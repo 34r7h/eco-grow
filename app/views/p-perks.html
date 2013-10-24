@@ -1,0 +1,16 @@
+<h3>Perks</h3>
+<div ng-repeat="thing in perks">
+	<a href="{{thing.url}}">
+		<div class="panel">
+			<h5>
+				{{thing.name}} ${{thing.cost}} 
+			</h5>
+			<p> 
+				{{thing.details}}
+			</p>
+			<code>
+				{{thing.claimed}} of {{thing.available}}
+			</code>
+		</div>
+	</a>
+</div>

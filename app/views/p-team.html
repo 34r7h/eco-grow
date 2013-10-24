@@ -1,0 +1,8 @@
+<h3>Your Team</h3>
+<div ng-repeat="teamMembers in team">
+	<div class="small-2 columns">
+		<img ng-src={{teamMembers.imgUrl}}>
+		<h4>{{teamMembers.name}}</h4>
+		<h5>{{teamMembers.position}}</h5>
+	</div>
+</div>
