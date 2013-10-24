@@ -119,15 +119,6 @@ module.exports = function (grunt) {
       },
       server: '.tmp'
     },
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc'
-      },
-      all: [
-        'Gruntfile.js',
-        '<%= yeoman.app %>/scripts/{,*/}*.js'
-      ]
-    },
     coffee: {
       options: {
         sourceMap: true,
