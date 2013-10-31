@@ -1,13 +1,10 @@
 'use strict';
 
 angular.module('EcossentialsApp')
-  .controller('GrowCtrl', function ($scope) {
+  .controller('DetailCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-
-    $scope.donateAmount = 1;
-    
   });

@@ -67,3 +67,38 @@ table tbody {
   overflow: scroll;
   max-height: 70%;
 }
+
+.clear {
+  clear: both;
+}
+
+.perk-options {
+  margin: 8px 1em 0 0;
+}
+
+.fico h1 {
+  margin-bottom: 10px;
+  font-size: 40px;
+}
+
+.fico h4 {
+  margin-bottom: 4px;
+}
+
+.fico hr {
+  border: solid 1px;
+  border-color: #bbb transparent transparent transparent;
+}
+
+.fico ul {
+  list-style: none;
+  overflow: hidden;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.fico ul li {
+  font-size: 28px;
+  margin-bottom: 16px;
+  vertical-align: center;
+}

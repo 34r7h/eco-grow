@@ -12,17 +12,22 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <!-- build:css(.tmp) styles/main.css -->
+        
+         <link rel="stylesheet" href="styles/social_foundicons.css">
+        <link rel="stylesheet" href="styles/general_foundicons.css">
+       
         <link rel="stylesheet" href="styles/foundation.css">
         <link rel="stylesheet" href="styles/main.css">
-  
+ 
+        
 
   
 
         <!-- endbuild -->
 </head>
+
   <body class="row" ng-app="EcossentialsApp">
     
-
     
 
     <!--[if lt IE 7]>
@@ -57,43 +62,41 @@
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
     </script>
-
-<script src="https://checkout.stripe.com/v2/checkout.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.61.0-2013.06.06/jquery.blockUI.min.js"></script>
     <!-- 
     <script type="text/javascript" src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
     
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular.min.js"></script>
     -->
-    
-    
-
         <!-- build:js scripts/modules.js -->
 
 
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/jquery/jquery.min.js"></script>
-          <script src="bower_components/foundation/js/foundation/foundation.tooltips.js"></script>
-          <script src="bower_components/foundation/js/foundation/foundation.topbar.js"></script>
-          <script src="bower_components/foundation/js/foundation/foundation.reveal.js"></script>
-        <script src="bower_components/foundation/js/foundation/foundation.dropdown.js"></script>
-         <script src="bower_components/modernizr/modernizr.js"></script>
-         
-        <script src="bower_components/angular-resource/angular-resource.js"></script>
-        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.js"></script>         
+<script src="bower_components/foundation/js/foundation/foundation.tooltips.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.topbar.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.reveal.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.dropdown.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.forms.js"></script>
+<script src="bower_components/modernizr/modernizr.js"></script>
+
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 
 
 
         <!-- endbuild -->
 
+        <script src="https://checkout.stripe.com/v2/checkout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.61.0-2013.06.06/jquery.blockUI.min.js"></script>
+
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/product.js"></script>
-        <script src="scripts/store.js"></script>
-        <script src="scripts/shoppingCart.js"></script>
-        <script src="scripts/controller.js"></script>
+        <script src="scripts/project.js"></script>
+        <script src="scripts/mongolab.js"></script>
+
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/grow.js"></script>
         <script src="scripts/controllers/p-video.js"></script>
@@ -112,9 +115,12 @@
   
   
         <script src="scripts/controllers/ModalInstance.js"></script>
-        <script src="scripts/controllers/support.js"></script>
-        <script src="scripts/controllers/cart.js"></script>
-        <script src="scripts/controllers/perk.js"></script>
+        
+        <script src="scripts/controllers/admin.js"></script>
+        <script src="scripts/controllers/list.js"></script>
+        <script src="scripts/controllers/detail.js"></script>
+        <script src="scripts/controllers/create.js"></script>
+        <script src="scripts/controllers/edit.js"></script>
         <!-- endbuild -->
   <script>
     $(document).foundation();

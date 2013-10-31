@@ -1,0 +1,36 @@
+<form name="myForm">
+  <div>
+    <label>Name</label>
+    <input type="text" name="name" ng-model="project.name" required>
+
+  </div>
+ 
+  <div>
+    <label>Cost</label>
+    <input type="currency" name="cost" ng-model="project.cost" required>
+    
+  </div>
+
+  <div>
+    <label>Available</label>
+    <input type="number" name="cost" ng-model="project.available" required>
+    
+  </div>
+
+  <div>
+    <label>Claimed</label>
+    <input type="number" name="claimed" ng-model="project.claimed" >
+    
+  </div>
+ 
+  <label>Description</label>
+  <textarea name="description" ng-model="project.description" required></textarea>
+ 
+  <br>
+  <a href="#/list"><i class="foundicon-minus"></i> Cancel</a>
+  <button ng-click="save()" ng-disabled="isClean() || myForm.$invalid"
+          class="success"><i class="foundicon-checkmark"></i> Save</button>
+  <button ng-click="destroy()"
+          ng-show="project._id" class="alert"><i class="foundicon-remove"></i> Delete</button>
+          <a ng-href="/#/new" class="button"><i class="foundicon-plus"></i> new perk</a>
+</form>

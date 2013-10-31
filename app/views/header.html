@@ -7,10 +7,12 @@
     <!-- Title Area -->
     <li class="name ">
 
-      <h1 data-tooltip class="has-tip" title="{{header.oneLiner}}"><a href="/#/">{{header.title}}</a></h1>
+      <h1 title="{{header.oneLiner}}"><a href="/#/"><i class="foundicon-globe"></i> {{header.title}}</a></h1>
     </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
+        </li>
     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar has-form"><a class="button success" href="/#/grow">Contribute!</a></li>
+    
   </ul>
 
   <section class="top-bar-section">
@@ -24,25 +26,47 @@
       <li>
       	<a href="#" data-dropdown="stream">Stream</a>
 		<div id="stream" class="f-dropdown content small" data-dropdown-content>
-  			<div ng-include="'views/p-stream.html'" ng-controller="PStreamCtrl">Streaming stream...</div>
+  			<div ng-include="'views/p-stream.html'" ng-controller="PStreamCtrl">Streaming a stream...</div>
 		</div>
       </li>
      
       <li>
       	<a href="#" data-dropdown="funders">Funders</a>
 		<div id="funders" class="f-dropdown content" data-dropdown-content>
-  		 	<div ng-include="'views/p-funders.html'" ng-controller="PFundersCtrl">Honouring funders...</div>
+  		 	<div ng-include="'views/p-funders.html'" ng-controller="PFundersCtrl">Honouring our funders...</div>
 		</div>
       </li>
     </ul>
 
     <!-- Right Nav Section -->
-    <ul class="right">
-     
-      <li class="has-form">
-        <a class="button success" href="/#/grow">Contribute!</a>
-      </li>
-    </ul>
+    <div class="right row collapse" ng-controller="PPerksCtrl">
+
+
+<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+    <input type="hidden" name="cmd" value="_xclick">
+    <input type="hidden" name="business" value="irth@3rdrockdesign.com">
+    <input type="hidden" name="lc" value="US">
+    <input type="hidden" name="item_name" value="Ecossentials Perk">
+    <input type="hidden" name="button_subtype" value="products">
+    <input type="hidden" name="no_note" value="0">
+    <input type="hidden" name="currency_code" value="CAD">
+    <input type="hidden" name="add" value="1">
+    <select name="os0" class="small-4 columns content perk-options left">
+    <option ng-repeat="perk in perks" value="{{perk.cost}}" id="{{perk.cost}}" ng-model="perk.cost">{{perk.name}} ${{perk.cost}}</option>
+    </select>
+ 
+<input type="hidden" name="currency_code" value="CAD">
+
+
+<input ng-repeat="perk in perks" type="hidden" name="option_select{{$index}}" value="{{perk.cost}}">
+<input ng-repeat="perk in perks" type="hidden" name="option_amount{{$index}}" value="{{perk.cost}}">
+<input type="hidden" name="option_index" value="0">
+
+
+
+        <input type="submit" class="button prefix small-3 columns success right" name="submit" ng-model="perks.cost" value="Claim this Perk">
+</form>
+    </div>
   </section>
 
 </nav>
