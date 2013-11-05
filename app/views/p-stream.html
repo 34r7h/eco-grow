@@ -4,7 +4,7 @@
 
 <div ng-repeat="stream in streams">
 	<div>
-		{{stream.name}} {{stream.type}} {{stream.content}} on {{stream.time}}
+		<i class="foundicon-mic"></i> {{stream.name}} {{stream.type}} {{stream.content}} on {{stream.time | date:'medium'}}
 	</div>
 </div>
   

@@ -7,4 +7,7 @@ angular.module('EcossentialsApp')
       'AngularJS',
       'Karma'
     ];
+
+    $scope.beHereNow = new Date().getTime();
+
   });

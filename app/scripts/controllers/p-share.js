@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('EcossentialsApp')
-  .controller('PShareCtrl', function ($scope) {
-    $scope.share = [
-    	{name:"Facebook", url:"http://facebook.com/share", icon:"facebook"},
-    	{name:"Twitter", url:"http://twitter.com/share", icon:"twitter"},
-    	{name:"Google", url:"http://google.com/share", icon:"google-plus"},
-    	
-    ];
+  .controller('PShareCtrl', function ($scope, angularFire) {
+
+    var shaUrl = new Firebase("https://eco-grow.firebaseio.com/share");
+    angularFire(shaUrl, $scope, "share");
+    
+
+	
   });

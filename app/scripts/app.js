@@ -1,6 +1,6 @@
 'use strict';
 
-var ecoApp = angular.module('EcossentialsApp', ['mongolab']);
+var ecoApp = angular.module('EcossentialsApp', ['firebase', 'contenteditable']);
   ecoApp.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -16,7 +16,7 @@ var ecoApp = angular.module('EcossentialsApp', ['mongolab']);
         controller: 'PVideoCtrl'
       })
       .when('/p-perks', {
-        templateUrl: 'views/p-video.html',
+        templateUrl: 'views/p-perks.html',
         controller: 'PPerksCtrl'
       })
       .when('/p-share', {
@@ -73,9 +73,27 @@ var ecoApp = angular.module('EcossentialsApp', ['mongolab']);
         templateUrl: 'views/detail.html',
         controller: 'CreateCtrl'
       })
+      .when('/admin', {
+        templateUrl: 'views/admin.html',
+        controller: 'AdminCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
   });
 
+ecoApp.filter('noFractionCurrency',
+    [ '$filter', '$locale', function(filter, locale) {
+      var currencyFilter = filter('currency');
+      var formats = locale.NUMBER_FORMATS;
+      return function(amount, currencySymbol) {
+        var value = currencyFilter(amount, currencySymbol);
+        var sep = value.indexOf(formats.DECIMAL_SEP);
+        console.log(amount, value);
+        if(amount >= 0) { 
+          return value.substring(0, sep);
+        }
+        return value.substring(0, sep) + '';
+      };
+    } ]);
 

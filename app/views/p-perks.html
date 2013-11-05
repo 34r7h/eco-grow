@@ -1,47 +1,37 @@
 <h3>Perks</h3>
 
 
-
-
-
-
-
-
-<div ng-repeat="thing in perks" ng-click="add()">
+<div ng-repeat="perk in perks | orderBy:'cost'">
 	
-	<div class="panel ">
+	<div class="panel">
 		<div class="right small-6 columns">
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 				<input type="hidden" name="cmd" value="_xclick">
 				<input type="hidden" name="business" value="irth@3rdrockdesign.com">
 				<input type="hidden" name="item_name"
-				value="{{thing.name}}">
+				value="{{perk.name}}">
 				<input type="hidden" name="item_number" value="{{$index}}">
-				<input type="hidden" name="amount" value="{{thing.cost}}">
+				<input type="hidden" name="amount" value="{{perk.cost}}">
 				<input type="hidden" name="quantity" value="1">
 				<input type="hidden" name="no_note" value="1">
 				<input type="hidden" name="currency_code" value="CAD">
-				<button type="submit" class="small-12 columns" name="submit" ><i class="foundicon-idea"></i> ${{thing.cost}} <br> Claim it</button>
+				<button type="submit" class="small-12 columns success" name="submit" ><div>Yours for  ${{perk.cost}} </div><i style="font-size:1.3em" class="foundicon-heart"></i> </button>
+			
+
 			</form>	
 			
 		</div>
 		
 			<h5 class="left small-6 columns">
-				{{thing.name}}
+				{{perk.name}}
 			</h5>
 			<p> 
-				{{thing.details}}
-			</p>		
-
-		
-				
-
-
-				
+				{{perk.details}}
+			</p>	
 				
 				<p>
 				<code>
-					{{thing.claimed}} of {{thing.available}}
+					{{perk.claimed}} of {{perk.available}} claimed.
 				</code>
 				</p>
 			
@@ -50,6 +40,5 @@
 		
 	
 	</div>
-
 
 

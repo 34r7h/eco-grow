@@ -15,13 +15,10 @@
         
          <link rel="stylesheet" href="styles/social_foundicons.css">
         <link rel="stylesheet" href="styles/general_foundicons.css">
-       
         <link rel="stylesheet" href="styles/foundation.css">
         <link rel="stylesheet" href="styles/main.css">
  
-        
 
-  
 
         <!-- endbuild -->
 </head>
@@ -67,10 +64,12 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular.min.js"></script>
     -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min.js"></script>       
+<script src="https://cdn.firebase.com/v0/firebase.js"></script>
         <!-- build:js scripts/modules.js -->
 
 
-<script src="bower_components/angular/angular.js"></script>
+
 <script src="bower_components/jquery/jquery.min.js"></script>
 <script src="bower_components/foundation/js/foundation/foundation.js"></script>         
 <script src="bower_components/foundation/js/foundation/foundation.tooltips.js"></script>
@@ -78,49 +77,37 @@
 <script src="bower_components/foundation/js/foundation/foundation.reveal.js"></script>
 <script src="bower_components/foundation/js/foundation/foundation.dropdown.js"></script>
 <script src="bower_components/foundation/js/foundation/foundation.forms.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.section.js"></script>
 <script src="bower_components/modernizr/modernizr.js"></script>
+<script src="bower_components/angular-contenteditable/angular-contenteditable.js"></script>
 
 <script src="bower_components/angular-resource/angular-resource.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-fire/angularfire.min.js"></script>
 
 
 
         <!-- endbuild -->
 
-        <script src="https://checkout.stripe.com/v2/checkout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.61.0-2013.06.06/jquery.blockUI.min.js"></script>
-
+   
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/project.js"></script>
-        <script src="scripts/mongolab.js"></script>
-
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/grow.js"></script>
+   
+        <script src="scripts/controllers/main.js"></script>    
         <script src="scripts/controllers/p-video.js"></script>
         <script src="scripts/controllers/p-share.js"></script>
         <script src="scripts/controllers/p-story.js"></script>
         <script src="scripts/controllers/p-perks.js"></script>
         <script src="scripts/controllers/p-stream.js"></script>
-        <script src="scripts/controllers/p-comments.js"></script>
         <script src="scripts/controllers/header.js"></script>
-        <script src="scripts/controllers/p-funders.js"></script>
         <script src="scripts/controllers/p-team.js"></script>
-        <script src="scripts/controllers/contribute.js"></script>
         <script src="scripts/controllers/p-contribute.js"></script>
         <script src="scripts/controllers/footer.js"></script>
 
-  
-  
-        <script src="scripts/controllers/ModalInstance.js"></script>
-        
         <script src="scripts/controllers/admin.js"></script>
-        <script src="scripts/controllers/list.js"></script>
-        <script src="scripts/controllers/detail.js"></script>
-        <script src="scripts/controllers/create.js"></script>
-        <script src="scripts/controllers/edit.js"></script>
         <!-- endbuild -->
   <script>
     $(document).foundation();

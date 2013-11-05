@@ -2,7 +2,7 @@
 
 <div class="contain-to-grid sticky fixed">
 <nav class="top-bar">
-
+<div class="small-4 columns">
 <ul class="title-area">
     <!-- Title Area -->
     <li class="name ">
@@ -15,34 +15,33 @@
     
   </ul>
 
+
+
   <section class="top-bar-section">
     <!-- Left Nav Section -->
     <ul class="left">
-      <li><a href="#" data-dropdown="comments">Comments</a>
-<div id="comments" class="f-dropdown content medium" data-dropdown-content>
-  <div ng-include="'views/p-comments.html'" ng-controller="PCommentsCtrl">Listening for comments...</div>
-</div></li>
+      
       
       <li>
-      	<a href="#" data-dropdown="stream">Stream</a>
+      	<a ng-href="" data-dropdown="stream"><i class="foundicon-down-arrow"></i> Stream</a>
 		<div id="stream" class="f-dropdown content small" data-dropdown-content>
   			<div ng-include="'views/p-stream.html'" ng-controller="PStreamCtrl">Streaming a stream...</div>
 		</div>
       </li>
      
-      <li>
-      	<a href="#" data-dropdown="funders">Funders</a>
-		<div id="funders" class="f-dropdown content" data-dropdown-content>
-  		 	<div ng-include="'views/p-funders.html'" ng-controller="PFundersCtrl">Honouring our funders...</div>
-		</div>
-      </li>
+      
     </ul>
+</div>
 
     <!-- Right Nav Section -->
-    <div class="right row collapse" ng-controller="PPerksCtrl">
+<div class="small-6 columns">
+
+    <div class="right row" ng-controller="PPerksCtrl">
 
 
-<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<form class="form custom" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+  <div class="small-7 columns perk-options left">
+
     <input type="hidden" name="cmd" value="_xclick">
     <input type="hidden" name="business" value="irth@3rdrockdesign.com">
     <input type="hidden" name="lc" value="US">
@@ -51,8 +50,9 @@
     <input type="hidden" name="no_note" value="0">
     <input type="hidden" name="currency_code" value="CAD">
     <input type="hidden" name="add" value="1">
-    <select name="os0" class="small-4 columns content perk-options left">
-    <option ng-repeat="perk in perks" value="{{perk.cost}}" id="{{perk.cost}}" ng-model="perk.cost">{{perk.name}} ${{perk.cost}}</option>
+    <select name="os0" ng-model="selecVal" value="1">
+    <option value="" disabled selected >Choose your perk and claim it today!</option>
+    <option ng-repeat="perk in perks | orderBy:'cost'" value="{{perk.cost}}" id="{{perk.cost}}" ng-model="perk.cost">{{perk.name}} ${{perk.cost}}</option>
     </select>
  
 <input type="hidden" name="currency_code" value="CAD">
@@ -62,9 +62,13 @@
 <input ng-repeat="perk in perks" type="hidden" name="option_amount{{$index}}" value="{{perk.cost}}">
 <input type="hidden" name="option_index" value="0">
 
-
-
-        <input type="submit" class="button prefix small-3 columns success right" name="submit" ng-model="perks.cost" value="Claim this Perk">
+</div>
+<div class="small-1 columns left">
+  <h3>
+    <i class="foundicon-right-arrow"></i>
+  </h3>
+</div>
+        <button ng-disabled="!selecVal" type="submit" class="small-4 columns success right" name="submit" ng-model="valu"><i class="foundicon-heart">{{selecVal | noFractionCurrency}}</i> Perk</button>
 </form>
     </div>
   </section>
@@ -72,6 +76,7 @@
 </nav>
 </div>
 </div>
+
 
 
    

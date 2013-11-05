@@ -1,15 +1,22 @@
 <div class="panel">
-<h2>
-	We've raised {{fund.raised}} of our {{fund.goal}}!
-</h2>
-<p> 
-<div class="progress small-12 success round"><span class="meter" style="width: 62%"><center>Thank you</center></span></div>
+<h4>
+	Ecossentials is Expanding 
+</h4>
+<p>
+	Ecossentials is offering great perks in order to upgrade to a better location - right next door! 
 </p>
+<p><b>
+	We've raised {{fund.raised | noFractionCurrency}} of our {{fund.goal | noFractionCurrency}} goal.
+</b></p>
 
-<div class="small-centered small-6 columns"><a href="#" data-reveal-id="myModal" class="success button">{{fund.buttonText}}</a></div>
+<p> 
+<div class="progress small-12 success round"><span class="meter" style="width: {{fund.perc}}%; text-align:right; padding-right:1em; position:relative; bottom:6px"><h2 class="perc-bump">{{fund.perc | number: 0}}%</h2></span></div>
+</p>
+<p>Thanks, we're moving along. With your help, we'll reach our remaining {{fund.goal - fund.raised | noFractionCurrency}} in no time!</p>
+<div class="small-centered small-6 columns"><a ng-href="" data-reveal-id="myModal" class="success button"><i class="foundicon-heart"></i> {{fund.buttonText}}</a></div>
 
 <code>
-	There are only {{fund.timeLeft}} days left to get your perk.
+	You have {{fund.timeLeft}} days left to claim these perks.
 </code>
 
 </div>
