@@ -16,7 +16,7 @@ body {
     background-size: cover;
     background-position:top;
 }
-
+.footer {padding-top: 2em;}
 .white-bg {
     background: rgba(255,255,255,.7);
     padding-top: 1em;

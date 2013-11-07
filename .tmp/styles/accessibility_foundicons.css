@@ -2,8 +2,8 @@
 
 @font-face {
   font-family: "AccessibilityFoundicons";
-  src: url("../styles/fonts/accessibility_foundicons.eot");
-  src: url("../styles/fonts/accessibility_foundicons.eot?#iefix") format("embedded-opentype"), url("../styles/fonts/accessibility_foundicons.woff") format("woff"), url("../styles/fonts/accessibility_foundicons.ttf") format("truetype"), url("../styles/fonts/accessibility_foundicons.svg#AccessibilityFoundicons") format("svg");
+  src: url("../fonts/accessibility_foundicons.eot");
+  src: url("../fonts/accessibility_foundicons.eot?#iefix") format("embedded-opentype"), url("../fonts/accessibility_foundicons.woff") format("woff"), url("../fonts/accessibility_foundicons.ttf") format("truetype"), url("../fonts/accessibility_foundicons.svg#AccessibilityFoundicons") format("svg");
   font-weight: normal;
   font-style: normal;
 }

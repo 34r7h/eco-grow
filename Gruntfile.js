@@ -236,7 +236,13 @@ module.exports = function (grunt) {
           dot: true,
           cwd: 'heroku',
           dest: '<%= yeoman.dist %>',
-          src: '*',
+          src: [
+                    '*.{ico,png,txt}',
+                    '.htaccess',
+                    'images/{,*/}*.{webp,gif}',
+                    'styles/fonts/{,*/}*.*',
+                    'bower_components/sass-bootstrap/fonts/*.*' // <-- New line
+                ],
           rename: function (dest, src) {
                     var path = require('path');
                     if (src === 'distpackage.json') {

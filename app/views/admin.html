@@ -1,42 +1,46 @@
-<form>
+<span class="right">
+
       	
-      	<button ng-click="fbLogin()">Sign in to make changes</button>
-</form>
-<form>
+      	<a ng-click="logOut()">  Log Out</a>
+
+</span>
+<span class="right">
       	
-      	<a ng-click="logOut()">LOGOUT</a>
-</form>
+      	<button class="success" ng-click="fbLogin()">Sign in to make changes</button>
+</span>
 
 
-
-<h2>Goals</h2>
-	<div>
-		<h3>We need: <b>$<span ng-model="fund.goal" contentEditable>{{fund.goal}}</span></b></h3>
-		<h3>We have: <b>$<span ng-model="fund.raised" contentEditable>{{fund.raised}}</span></b></h3>
+<h1>Online Campaign Headquarters</h1>
+	<div class="row">
+		<span class="small-6 columns"><h2>We need: <b>$ <span ng-model="fund.goal" contentEditable>{{fund.goal}}</span></b></h2></span>
+		<span class="small-6 columns"><h2>We have: <b>$ <span ng-model="fund.raised" contentEditable>{{fund.raised}}</span></b></h2></span>
+	</div>
+	<div class="progress small-12 success round" ><span class="meter" style="width: {{(fund.raised / fund.goal * 100)  | number: 0}}%; text-align:right; padding-right:1em; position:relative; bottom:6px; background:#2795B6"><h2 class="perc-bump">{{(fund.raised / fund.goal * 100)  | number: 0}}%</h2></span></div>
+<p class="right">**Double-click the brown delete buttons to remove entries.</p>
+	<h2 style="margin-top:2em;">Perks</h2>
+		<div class="panel small-6 columns" >
+			<form>
+	  <input type="text" ng-model="perk.name" placeholder="Perk Name" required/>
+	  <input type="text" ng-model="perk.cost" placeholder="Cost" required/>
+	  <textarea ng-model="perk.details" placeholder="Details" required></textarea>
+	  <input type="text" ng-model="perk.available" placeholder="Available" required/>
+	  <input type="text" ng-model="perk.claimed" placeholder="Claimed" required/>
+	  <button class="success" ng-click="offer()">Add new perk</button>
+	</form>
 	</div>
 
-<h2>Perks</h2>
-	<div class="panel">
-		<form>
-  <input type="text" ng-model="perk.name" placeholder="Perk Name" required/>
-  <input type="text" ng-model="perk.cost" placeholder="Cost" required/>
-  <textarea type="text" ng-model="perk.details" placeholder="Details" required/></textarea>
-  <input type="text" ng-model="perk.available" placeholder="Available" required/>
-  <input type="text" ng-model="perk.claimed" placeholder="Claimed" required/>
-  <button class="success" ng-click="offer()">Add new perk</button>
-</form>
-</div>
       	<div id="perks" ng-repeat="(key,perk) in perks">
+      	<div class="small-6 columns">
 			<h4><div ng-model="perk.name" contentEditable>{{perk.name}}</div></h4>
 			<code>$<span ng-model="perk.cost" contentEditable>{{perk.cost}}</span></code>
 			<p><div ng-model="perk.details" contentEditable></div></p>
 			
 			<button ng-dblclick="removePerk(perk)">delete</button>
-
+		</div>
 		</div>
   
 <h2>Team</h2>
-<div class="panel">
+<div class="panel small-6 columns ">
 		<form>
   <input type="text" ng-model="teammate.name" placeholder="Name" required/>
   <input type="text" ng-model="teammate.position" placeholder="Position" required/>
@@ -45,23 +49,26 @@
 </form>
 </div>
       	<div id="team" ng-hide ng-repeat="teamMember in team">
+      	<div class="small-6 columns">
 			<h4><div ng-model="teamMember.name" contentEditable>{{teamMember.name}}</div></h4>
-			<code><div ng-model="teamMember.imgUrl" contentEditable>{{teamMember.cost | noFractionCurrency}}</div></code>
-			<p><div ng-model="teamMember.position" contentEditable></div></p>
+			<code><div ng-model="teamMember.imgUrl" contentEditable>{{teamMember.imgUrl}}</div></code>
+			<p><div ng-model="teamMember.position" contentEditable>{{teamMember.position}}</div></p>
 			<button ng-dblclick="removePlayer(teamMember)">delete</button>
+		</div>
 		</div>
 
 
 
-<h2>Share</h2>	
+<h2>Share Url's</h2>	
 	<div id="share" ng-hide ng-repeat="thing in share">
-		<h4><div ng-model="thing.name" contentEditable>{{thing.name}}</div></h4>
-		<code><div ng-model="thing.url" contentEditable>{{thing.url}}</div></code>
-
+	<div class="row">
+		<span class="small-4 columns"><h4><div ng-model="thing.name" contentEditable>{{thing.name}}</div></h4>
+		<code><div ng-model="thing.url" contentEditable>{{thing.url}}</div></code></span>
 	</div>
-
+	</div>
+<br>
 <h2>Suppliers</h2>
-<div class="panel">
+<div class="panel small-6 columns">
 	<form>
   <input type="text" ng-model="supplier.name" placeholder="Name" required/>
   <input type="text" ng-model="supplier.type" placeholder="Type" required/>
@@ -70,7 +77,7 @@
 </form>
 </div>
 
-	<table>
+	<table class="small-6 columns">
 	  	
 		  	<thead>
 		    	<tr>
@@ -90,7 +97,7 @@
 	</table>
 
 <h2>Items</h2>
-<div class="panel">
+<div class="panel small-6 columns">
 <p>New Juice Bar Item</p>
 <form>
   <input type="text" ng-model="juiceBar.name" placeholder="Name" required/>
@@ -147,7 +154,7 @@
 	</div>
 
 <h2 style="clear:both">Budget Summary</h2>
-<div class="panel">
+<div class="panel small-6 columns">
 <form>
   <input type="text" ng-model="category.type" placeholder="Type" required/>
   <input type="text" ng-model="category.cost" placeholder="Cost" required/>
@@ -174,17 +181,20 @@
 
 
 <h2>Story</h2>
-<div class="panel">
+<div class="panel small-12 columns sticky ">
 <form>
+<input type="text" ng-model="imagination.heading" placeholder="Heading" />
 	<input type="text" ng-model="imagination.img" placeholder="image url" />
-  <input type="text" ng-model="imagination.heading" placeholder="Heading" />
-  <input type="text" ng-model="imagination.content" placeholder="Content" />
+  <textarea ng-model="imagination.content" placeholder="Content" ></textarea>
    <input type="number" ng-model="imagination.order" placeholder="Order (highest on top)" />
   <button class="success" ng-click="imagine()">Add story</button>
 </form>
 </div>
   <div ng-repeat="snippet in story | orderBy:'order' ">
-	<img ng-src="{{snippet.img}}"><code>Img Url:</code><p contentEditable ng-model="snippet.img">{{snippet.img}}</p><code>Heading:</code> <h3 contentEditable ng-model="snippet.heading">{{snippet.heading}}</h3><code>Order:</code> <p contentEditable ng-model="snippet.order">{{snippet.order}} </p><code>Content:</code><p ng-model="snippet.content" contentEditable>{{snippet.content}}</p>
+  <div class="small-6 columns">
+  <code>Heading:</code> <h3 contentEditable ng-model="snippet.heading">{{snippet.heading}}</h3>
+	<img ng-src="{{snippet.img}}"><code>Img Url:</code><p contentEditable ng-model="snippet.img">{{snippet.img}}</p><code>Order:</code> <p contentEditable ng-model="snippet.order">{{snippet.order}} </p><code>Content:</code><p ng-model="snippet.content" contentEditable>{{snippet.content}}</p>
+	</div>
   </div>     
            
                     
