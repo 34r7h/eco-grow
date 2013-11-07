@@ -10,8 +10,15 @@ input::-webkit-inner-spin-button {
 body {
   background: #fafafa url('/images/foggy.jpg') fixed;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+  color: #3E1E10;
   padding-top: 60px;
+  background-size: cover;
+  background-position: top;
+}
+
+.white-bg {
+  background: rgba(255,255,255,.7);
+  padding-top: 1em;
 }
 
 .hero-unit {
@@ -61,8 +68,9 @@ table tbody {
 .contain-to-grid,
 .top-bar-section .has-form,
 .top-bar-section li a:not(.button) {
-  background: rgba(85, 86, 85, 1);
-  max-height: 44px;
+  max-height: 46px;
+  background: #E8E7E7;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.6);
 }
 
 .top-bar-section li a:not(.button):hover {
@@ -100,6 +108,35 @@ form.custom .custom.dropdown ul li {
   text-shadow: 0 0 5px #DFDEDD;
 }
 
+.panel h1,
+.panel h2,
+.panel h3,
+.panel h4,
+.panel h5,
+.panel h6,
+.panel p {
+  color: #402016;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #402016;
+}
+
+.reveal-modal {
+  background-color: #CFCDCC;
+  border: solid 1px #dEcAc9;
+  box-shadow: 0 0 10px rgba(0,0,0,.4);
+}
+
+.reveal-modal-bg {
+  background: rgba(0, 0, 0, 0.65);
+}
+
 .fico h1 {
   margin-bottom: 10px;
   font-size: 40px;
@@ -131,24 +168,24 @@ form.custom .custom.dropdown ul li {
 
 @font-face {
   font-family: "GeneralFoundicons";
-  src: url("../fonts/general_foundicons.eot");
-  src: url("../fonts/general_foundicons.eot?#iefix") format("embedded-opentype"), url("../fonts/general_foundicons.woff") format("woff"), url("../fonts/general_foundicons.ttf") format("truetype"), url("../fonts/general_foundicons.svg#GeneralFoundicons") format("svg");
+  src: url("../styles/fonts/general_foundicons.eot");
+  src: url("../styles/fonts/general_foundicons.eot?#iefix") format("embedded-opentype"), url("../styles/fonts/general_foundicons.woff") format("woff"), url("../styles/fonts/general_foundicons.ttf") format("truetype"), url("../styles/fonts/general_foundicons.svg#GeneralFoundicons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SocialFoundicons";
-  src: url("../fonts/social_foundicons.eot");
-  src: url("../fonts/social_foundicons.eot?#iefix") format("embedded-opentype"), url("../fonts/social_foundicons.woff") format("woff"), url("../fonts/social_foundicons.ttf") format("truetype"), url("../fonts/social_foundicons.svg#SocialFoundicons") format("svg");
+  src: url("../styles/fonts/social_foundicons.eot");
+  src: url("../styles/fonts/social_foundicons.eot?#iefix") format("embedded-opentype"), url("../styles/fonts/social_foundicons.woff") format("woff"), url("../styles/fonts/social_foundicons.ttf") format("truetype"), url("../styles/fonts/social_foundicons.svg#SocialFoundicons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "AccessibilityFoundicons";
-  src: url("../fonts/accessibility_foundicons.eot");
-  src: url("../fonts/accessibility_foundicons.eot?#iefix") format("embedded-opentype"), url("../fonts/accessibility_foundicons.woff") format("woff"), url("../fonts/accessibility_foundicons.ttf") format("truetype"), url("../fonts/accessibility_foundicons.svg#AccessibilityFoundicons") format("svg");
+  src: url("../styles/fonts/accessibility_foundicons.eot");
+  src: url("../styles/fonts/accessibility_foundicons.eot?#iefix") format("embedded-opentype"), url("../styles/fonts/accessibility_foundicons.woff") format("woff"), url("../styles/fonts/accessibility_foundicons.ttf") format("truetype"), url("../styles/fonts/accessibility_foundicons.svg#AccessibilityFoundicons") format("svg");
   font-weight: normal;
   font-style: normal;
 }

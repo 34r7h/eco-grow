@@ -1,15 +1,190 @@
-<div ng-repeat="perk in perks">
+<form>
+      	
+      	<button ng-click="fbLogin()">Sign in to make changes</button>
+</form>
+<form>
+      	
+      	<a ng-click="logOut()">LOGOUT</a>
+</form>
 
-		
-		
+
+
+<h2>Goals</h2>
+	<div>
+		<h3>We need: <b>$<span ng-model="fund.goal" contentEditable>{{fund.goal}}</span></b></h3>
+		<h3>We have: <b>$<span ng-model="fund.raised" contentEditable>{{fund.raised}}</span></b></h3>
+	</div>
+
+<h2>Perks</h2>
+	<div class="panel">
+		<form>
+  <input type="text" ng-model="perk.name" placeholder="Perk Name" required/>
+  <input type="text" ng-model="perk.cost" placeholder="Cost" required/>
+  <textarea type="text" ng-model="perk.details" placeholder="Details" required/></textarea>
+  <input type="text" ng-model="perk.available" placeholder="Available" required/>
+  <input type="text" ng-model="perk.claimed" placeholder="Claimed" required/>
+  <button class="success" ng-click="offer()">Add new perk</button>
+</form>
+</div>
+      	<div id="perks" ng-repeat="(key,perk) in perks">
 			<h4><div ng-model="perk.name" contentEditable>{{perk.name}}</div></h4>
-
-			<code><div ng-model="perk.cost" contentEditable>{{perk.cost | noFractionCurrency}}</div></code>
-
+			<code>$<span ng-model="perk.cost" contentEditable>{{perk.cost}}</span></code>
 			<p><div ng-model="perk.details" contentEditable></div></p>
 			
-			
-		
+			<button ng-dblclick="removePerk(perk)">delete</button>
 
-
+		</div>
+  
+<h2>Team</h2>
+<div class="panel">
+		<form>
+  <input type="text" ng-model="teammate.name" placeholder="Name" required/>
+  <input type="text" ng-model="teammate.position" placeholder="Position" required/>
+  <input type="text" ng-model="teammate.imgUrl" placeholder="Image Url" required/>
+  <button class="success" ng-click="scout()">Add new team member</button>
+</form>
 </div>
+      	<div id="team" ng-hide ng-repeat="teamMember in team">
+			<h4><div ng-model="teamMember.name" contentEditable>{{teamMember.name}}</div></h4>
+			<code><div ng-model="teamMember.imgUrl" contentEditable>{{teamMember.cost | noFractionCurrency}}</div></code>
+			<p><div ng-model="teamMember.position" contentEditable></div></p>
+			<button ng-dblclick="removePlayer(teamMember)">delete</button>
+		</div>
+
+
+
+<h2>Share</h2>	
+	<div id="share" ng-hide ng-repeat="thing in share">
+		<h4><div ng-model="thing.name" contentEditable>{{thing.name}}</div></h4>
+		<code><div ng-model="thing.url" contentEditable>{{thing.url}}</div></code>
+
+	</div>
+
+<h2>Suppliers</h2>
+<div class="panel">
+	<form>
+  <input type="text" ng-model="supplier.name" placeholder="Name" required/>
+  <input type="text" ng-model="supplier.type" placeholder="Type" required/>
+  
+  <button class="success" ng-click="partner()">Add new supplier</button>
+</form>
+</div>
+
+	<table>
+	  	
+		  	<thead>
+		    	<tr>
+		      		<th><h5><i class="foundicon-location"></i> Local Supplier</h5></th>
+		      		<th><h5><i class="foundicon-cart"></i> Merchandise Type</h5></th>
+		      		<th></th>
+		    	</tr>
+		  	</thead>
+		  	<tbody>
+		    	<tr ng-repeat="supplier in suppliers | orderBy:'suppliers.name'">
+		      		<td contentEditable ng-model="supplier.name"><b>{{supplier.name}}</b></td>
+		      		<td contentEditable ng-model="supplier.type">{{supplier.type}}</td>
+		      		<td ><button ng-dblclick="removePartner(supplier)">delete</button></td>
+		    	</tr>
+		   </tbody>
+		
+	</table>
+
+<h2>Items</h2>
+<div class="panel">
+<p>New Juice Bar Item</p>
+<form>
+  <input type="text" ng-model="juiceBar.name" placeholder="Name" required/>
+  <input type="text" ng-model="juiceBar.cost" placeholder="Cost" required/>
+  <button class="success" ng-click="produceJuice()">Add juicebar item</button>
+</form>
+<p>New Kitchen Item</p>
+<form>
+  <input type="text" ng-model="kitcheN.name" placeholder="Name" required/>
+  <input type="text" ng-model="kitcheN.cost" placeholder="Cost" required/>
+  <button class="success" ng-click="produceKitchen()">Add kitchen item</button>
+</form>
+<p>New Misc Item</p>
+<form>
+  <input type="text" ng-model="misC.name" placeholder="Name" required/>
+  <input type="text" ng-model="misC.cost" placeholder="Cost" required/>
+  <button class="success" ng-click="produceMisc()">Add misc. item</button>
+</form>
+<p>New Reno Item</p>
+<form>
+  <input type="text" ng-model="renO.name" placeholder="Name" required/>
+  <input type="text" ng-model="renO.cost" placeholder="Cost" required/>
+  <button class="success" ng-click="produceReno()">Add renovation item</button>
+</form>
+<p>New Store Item</p>
+<form>
+  <input type="text" ng-model="storE.name" placeholder="Name" required/>
+  <input type="text" ng-model="storE.cost" placeholder="Cost" required/>
+  <button class="success" ng-click="produceStore()">Add store item</button>
+</form>
+</div>
+	<div class="small-6 columns" ng-repeat="(key, items) in newItems">
+	
+			<table>
+				<thead>
+				    <tr>
+				      <th style="width:100%"><h5><i class="foundicon-paper-clip"></i> {{key}}</h5></th>
+				      <th><h5>Cost</h5></th>
+				      <th></th>
+				    </tr>
+				</thead>
+				<tbody>
+				    <tr ng-repeat="item in items">
+				      <td ng-model="item.name" contentEditable>{{item.name}}</td>
+				      <td ng-model="item.cost" contentEditable>{{item.cost}}</td>
+				    
+				    <td>
+				    	<button ng-dblclick="removeItem(item, key)">delete</button>
+
+				    </td> 
+				    </tr>
+			   </tbody>
+			</table>
+	</div>
+
+<h2 style="clear:both">Budget Summary</h2>
+<div class="panel">
+<form>
+  <input type="text" ng-model="category.type" placeholder="Type" required/>
+  <input type="text" ng-model="category.cost" placeholder="Cost" required/>
+  <button class="success" ng-click="summarize()">Add category</button>
+</form>
+</div>
+	<table>
+	  <thead>
+	    <tr>
+	      <th><h5> <i class="foundicon-folder"></i> Summary of Required Finances</h5></th>
+	      <th><h5>Cost</h5></th>
+	      <th></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr ng-repeat="category in budget">
+	      <td ng-model="category.type" contentEditable>{{category.type}}</td>
+	      <td ng-model="category.cost" contentEditable>{{category.cost}}</td>
+	      <td><button ng-dblclick="removeCategory(category)">delete</button></td>
+	    </tr>
+	  </tbody>
+
+	</table>
+
+
+<h2>Story</h2>
+<div class="panel">
+<form>
+	<input type="text" ng-model="imagination.img" placeholder="image url" />
+  <input type="text" ng-model="imagination.heading" placeholder="Heading" />
+  <input type="text" ng-model="imagination.content" placeholder="Content" />
+   <input type="number" ng-model="imagination.order" placeholder="Order (highest on top)" />
+  <button class="success" ng-click="imagine()">Add story</button>
+</form>
+</div>
+  <div ng-repeat="snippet in story | orderBy:'order' ">
+	<img ng-src="{{snippet.img}}"><code>Img Url:</code><p contentEditable ng-model="snippet.img">{{snippet.img}}</p><code>Heading:</code> <h3 contentEditable ng-model="snippet.heading">{{snippet.heading}}</h3><code>Order:</code> <p contentEditable ng-model="snippet.order">{{snippet.order}} </p><code>Content:</code><p ng-model="snippet.content" contentEditable>{{snippet.content}}</p>
+  </div>     
+           
+                    

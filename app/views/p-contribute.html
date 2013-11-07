@@ -10,13 +10,11 @@
 </b></p>
 
 <p> 
-<div class="progress small-12 success round"><span class="meter" style="width: {{fund.perc}}%; text-align:right; padding-right:1em; position:relative; bottom:6px"><h2 class="perc-bump">{{fund.perc | number: 0}}%</h2></span></div>
+<div class="progress small-12 success round" ><span class="meter" style="width: {{(fund.raised / fund.goal * 100)  | number: 0}}%; text-align:right; padding-right:1em; position:relative; bottom:6px; background:#2795B6"><h2 class="perc-bump">{{(fund.raised / fund.goal * 100)  | number: 0}}%</h2></span></div>
 </p>
-<p>Thanks, we're moving along. With your help, we'll reach our remaining {{fund.goal - fund.raised | noFractionCurrency}} in no time!</p>
+<p>Thanks for your support, we're really revving along and will reach our remaining {{fund.goal - fund.raised | noFractionCurrency}} in no time!</p>
 <div class="small-centered small-6 columns"><a ng-href="" data-reveal-id="myModal" class="success button"><i class="foundicon-heart"></i> {{fund.buttonText}}</a></div>
 
-<code>
-	You have {{fund.timeLeft}} days left to claim these perks.
-</code>
+
 
 </div>

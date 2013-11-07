@@ -1,23 +1,6 @@
-<h3>Story</h3>
-<p>
-	Ecossentials has grown into Powell River’s Local Eco Market. For four and a half years now, Ecossentials has been providing Powell River with a wide variety of products that are organic, natural, ethical, sustainable, and of course local. We believe that these products being available is vital, not only for ourselves, but for our planet, our fellow human beings, our community, and our families. And there are so many other people who share the same values as us, and like us, these people want to use their money to support the products and producers that adhere to these same values. Each week there are more customers than the last. New people come in every day, saying, “I’ve never been here before, but so-n-so told me I had to come check it out.” Or often from visitors, “I’m so glad I happened to stumble upon you, I wish there was a store like this where I live!” Customers are always telling us how much they love and value having a resource like Ecossentials in Powell River. We as a community are so lucky to have the option of buying products that support everyone, from our many local produce farmer neighbours, to fair-trade organic cotton farmers in Egypt. Ecossentials is here to give all of us choices that we can feel proud of, products that support the kind of world we want to live in.
-</p>
-
-<p>
-	More and more, people are looking for the items they spend their money on to come from a good source. To buy housewares that are made by people who are paid and treated well, food that is as wholesome, nutritious and local as possible, cleaners that won’t pollute our ecosystem or bodies, clothing made with sustainable materials by people who are paid fairly for their work, toys that are fair-trade, plastic and battery-free, and to get it all with as little packaging and waste as possible.
-</p>
-
-<h3>Growing with our Community</h3>
-<p>
-	Our business has doubled since this time last year. We can’t even fit all the things you want and ask us to carry in the store. It’s gotten to the point where we just can’t add any more products, even if customers are repeatedly requesting them. You’ve asked for so many things: natural make up, local meats, ethically made kids’ socks and underwear, cloth diapers, organic butter, gluten-free breads and crackers, more groceries. But we don’t have the space. We also can’t bring in another till or more scales to help when we’ve got customers lined up, because there’s just nowhere to put them. And forget being able to store all of our inventory, we have to keep much of it elsewhere, which makes stocking difficult and complicated. We’ve grown as much as we can in this space, and we’ve come to realize it’s time for something bigger.
-</p>
-
-<p>
-	And so, we’re moving to a larger space! We already have a building. It’s great, it’s close, and it’s got room for all the things we lack: ample storage and display space, a real office, a staff room. We’ll have more than enough room for 4 scales, and 2 tills, so when it’s busy there’ll be less waiting. We’ll have more freezer and cooler space, so we can share more local foods and produce. We’ll be able to carry more of the things that you’ve wanted so long for us to provide. We want to use this bigger space to continue to support the local people who produce things that we all want and need to buy, like fresh, organically-grown produce, and the local clothing and gifts that are so treasured. So far, we’re stocking products by all these local suppliers:
-</p>
-
-
-
+<div ng-repeat="snippet in story | orderBy:'order' ">
+  <img ng-src="{{snippet.img}}"> <h3>{{snippet.heading}}</h3> <p>{{snippet.content}}</p>
+  </div>  
 
 
 <table>
@@ -37,111 +20,39 @@
 </div>
 </table>
 
-<p>
-	And that’s only the producers on the Sunshine Coast and Comox Valley, and there are products that these skilled producers have that we’d love to stock. We also have many more products that are made in Canada, and there are so many more things that we’re so excited to have room to introduce in our new, bigger store!
-</p>
 
-<p>
-	And we’ll continue to provide ethical options for the things that aren’t available locally, and we’ll be able to offer even more variety. We want to hear from you, too. We want to bring in the things that you’re looking for, the sustainable offerings that Powell River is so far lacking. This space is even big enough to go beyond what we’ve been doing and implement some of the plans we’ve been considering for years, like offering self-serve nut grinders, and prepared meals and drinks. Ecossentials has become more than a store, it is a gathering place for like-minded people. Many of the progressive members of Powell River’s community already meet or bump into each other here, and we want to encourage this. We imagine a store that people can come to, to share their ideas and visions for a healthier community. A very exciting part of this plan is that Carol Sigvaldason, of The Flying Yellow Breadbowl, is coming on board to open an organic cafeteria & take-out counter! Not only will this be a place to sit and meet, but Powell River will once again have access to her naturally delicious foods. The community has missed them, and we are proud to offer a venue for her to provide organic meals and snacks, as well as meals for you to take home and prepare. Quick, easy, and healthy.
-</p>
 
-<h4>Filling the Gap</h4>
+<div class="small-12 columns" ng-repeat="(key, items) in newItems">
+  
+      <table>
+        <thead>
+            <tr>
+              <th width="100%"><h5><i class="foundicon-paper-clip"></i> {{key}}</h5></th>
+              <th style="text-align:right"><h5>Cost</h5></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in items">
+              <td ng-model="item.name" >{{item.name}}</td>
+              <td style="text-align:right" ng-model="item.cost" >{{item.cost | noFractionCurrency}}</td>
+            </tr>
+         </tbody>
+      </table>
+  </div>
 
-<p>
-	So, we’ve got the building, we’ve got the plans and ideas, we’ve got the experience and passion too, but it’s going to take a lot of money all at once to make this happen efficiently. We need to renovate the new space. There are walls that need to come down, and walls that need to go up. We also need to buy a lot of equipment; coolers and freezers and tills and scales are going to add up quick. And we may have a lot of stock now, but we’ll need much more to fill the new space properly. The equipment we need includes the following:
-</p>
 
-<table>
-	<div class="large-6 columns">
-  <thead>
-    <tr>
-      <th width="100%"><h5><i class="foundicon-paper-clip"></i> Kitchen / Cafe Items</h5></th>
-      <th><h5>Cost</h5></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="item in newItems.kitchen">
-      <td>{{item.name}}</td>
-      <td>{{item.cost | currency}}</td>
-    </tr>
-   </tbody>
-</div>
-
-    <thead>
-    <tr>
-      <th><h5><i class="foundicon-paper-clip"></i> Juicebar Items</h5></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="item in newItems.juicebar">
-      <td>{{item.name}}</td>
-      <td>{{item.cost | currency}}</td>
-    </tr>
-    </tbody>
-
-    <thead>
-    <tr>
-      <th><h5><i class="foundicon-paper-clip"></i> Store Items</h5></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="item in newItems.store">
-      <td>{{item.name}}</td>
-      <td>{{item.cost | currency}}</td>
-    </tr>
-  </tbody>
-
-   <thead>
-    <tr>
-      <th><h5><i class="foundicon-paper-clip"></i> Renovations</h5></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="item in newItems.reno">
-      <td>{{item.name}}</td>
-      <td>{{item.cost | currency}}</td>
-    </tr>
-  </tbody>
-
-  <thead>
-    <tr>
-      <th><h5><i class="foundicon-paper-clip"></i> Miscelanious</h5></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="item in newItems.misc">
-      <td>{{item.name}}</td>
-      <td>{{item.cost | currency}}</td>
-    </tr>
-  </tbody>
-
-</table>
-
-<p>
-	These are the numbers based on purchasing everything Ecossentials will need new, but we are hoping to find quality used options for as many of these items as possible, which will help us keep the costs down. You can see how expensive this jump is going to be. We are open to ideas, and would love to talk to anyone who might have equipment or skills that would contribute to achieving the goal of a bigger, better Local Eco Market for Powell River.
-</p>
 <table>
   <thead>
     <tr>
       <th><h5> <i class="foundicon-folder"></i> Summary of Required Finances</h5></th>
-      <th><h5>Cost</h5></th>
+      <th style="text-align:right"><h5>Cost</h5></th>
     </tr>
   </thead>
   <tbody>
     <tr ng-repeat="item in budget">
       <td>{{item.type}}</td>
-      <td>{{item.cost | currency}}</td>
+      <td style="text-align:right">{{item.cost | currency}}</td>
     </tr>
   </tbody>
 
 </table>
-
-
-<h3>Help Grow your Local Eco Market</h3>
-<p>
-	If you want to be able to get more of the things you need from sources you can feel good about, if it’s important to you to be able to get products that are as good for the rest of the world as they are for you, please take a look at the perks we’ve put together. We have come up with some items, packages, and experiences that are pretty cool, and we think you’ll find real value in them. We are offering these because we need help from our community to get Ecossentials ready to open in the new year. If we are going to be able to have the café open right away, and all the renovations done in time to open in February, we need a lot of capital all at once, and we can’t do this without your help. If you’re interested in being a part of the growth of this important community resource, please choose a perk from the list; we’ve got a whole range of them. And if you are close and have time, skills or resources to share, those would be greatly appreciated as well. There will be lots of work for us to do, and we’d be happy to trade perks for your help! We are also interested in discussing financing opportunities with anyone who might be interested in helping in this way, so please come talk to us if you have ideas that could help us achieve the goal of this expanded resource for our community. We are so excited about this opportunity, we know that the store is ready for this step, and we want to be able to do it properly. That’s why we need to ask for the help of our community, and of like-minded people who want to see Ecossentials grow. We feel like there is so much potential and benefit to us all in what we’ve been building together, and here is a chance for you to join us as the store continues to get bigger and better! We’re calling it The Ecossentials Project; Ecossentials is more than ready for this growth, and your support will help make it happen smoothly and efficiently.
-</p>

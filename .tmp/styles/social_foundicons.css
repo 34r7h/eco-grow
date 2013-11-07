@@ -2,8 +2,8 @@
 
 @font-face {
   font-family: "SocialFoundicons";
-  src: url("/fonts/social_foundicons.eot");
-  src: url("/fonts/social_foundicons.eot?#iefix") format("embedded-opentype"), url("../fonts/social_foundicons.woff") format("woff"), url("../fonts/social_foundicons.ttf") format("truetype"), url("../fonts/social_foundicons.svg#SocialFoundicons") format("svg");
+  src: url("/styles/fonts/social_foundicons.eot");
+  src: url("/fonts/social_foundicons.eot?#iefix") format("embedded-opentype"), url("../styles/fonts/social_foundicons.woff") format("woff"), url("../styles/fonts/social_foundicons.ttf") format("truetype"), url("../styles/fonts/social_foundicons.svg#SocialFoundicons") format("svg");
   font-weight: normal;
   font-style: normal;
 }

@@ -1,46 +1,24 @@
 <div class="row">
 
 <div class="contain-to-grid sticky fixed">
-<nav class="top-bar">
-<div class="small-4 columns">
-<ul class="title-area">
-    <!-- Title Area -->
-    <li class="name ">
+<nav class="top-bar" ng-controller="PPerksCtrl">
+<div class="small-4 columns"><a ng-href="/#/"><img src="/images/eco-logo.png"></a></div>
 
-      <h1 title="{{header.oneLiner}}"><a href="/#/"><i class="foundicon-globe"></i> {{header.title}}</a></h1>
-    </li>
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
-        </li>
-    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    
-  </ul>
-
-
-
-  <section class="top-bar-section">
-    <!-- Left Nav Section -->
-    <ul class="left">
-      
-      
-      <li>
-      	<a ng-href="" data-dropdown="stream"><i class="foundicon-down-arrow"></i> Stream</a>
-		<div id="stream" class="f-dropdown content small" data-dropdown-content>
-  			<div ng-include="'views/p-stream.html'" ng-controller="PStreamCtrl">Streaming a stream...</div>
-		</div>
-      </li>
-     
-      
-    </ul>
-</div>
-
-    <!-- Right Nav Section -->
-<div class="small-6 columns">
-
-    <div class="right row" ng-controller="PPerksCtrl">
+<section class="top-bar-section">
+<!--
+<div class="small-3 columns">
+   <ul><li>
+        <a ng-href="" data-dropdown="stream"><i class="foundicon-down-arrow"></i> Stream</a>
+    <div id="stream" class="f-dropdown content small" data-dropdown-content>
+        <div ng-include="'views/p-stream.html'" ng-controller="PStreamCtrl">Streaming a stream...</div>
+    </div>
+      </li></ul>
+      </div>
+-->
 
 
 <form class="form custom" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-  <div class="small-7 columns perk-options left">
+  <div class="small-4 columns perk-options">
 
     <input type="hidden" name="cmd" value="_xclick">
     <input type="hidden" name="business" value="irth@3rdrockdesign.com">
@@ -52,7 +30,7 @@
     <input type="hidden" name="add" value="1">
     <select name="os0" ng-model="selecVal" value="1">
     <option value="" disabled selected >Choose your perk and claim it today!</option>
-    <option ng-repeat="perk in perks | orderBy:'cost'" value="{{perk.cost}}" id="{{perk.cost}}" ng-model="perk.cost">{{perk.name}} ${{perk.cost}}</option>
+    <option ng-repeat="perk in perks " value="{{perk.cost}}" id="{{perk.cost}}" ng-model="perk.cost">{{perk.name}} ${{perk.cost}}</option>
     </select>
  
 <input type="hidden" name="currency_code" value="CAD">
@@ -63,16 +41,11 @@
 <input type="hidden" name="option_index" value="0">
 
 </div>
-<div class="small-1 columns left">
-  <h3>
-    <i class="foundicon-right-arrow"></i>
-  </h3>
-</div>
-        <button ng-disabled="!selecVal" type="submit" class="small-4 columns success right" name="submit" ng-model="valu"><i class="foundicon-heart">{{selecVal | noFractionCurrency}}</i> Perk</button>
-</form>
-    </div>
-  </section>
 
+        <button ng-disabled="!selecVal" type="submit" class="small-4 columns success" name="submit" ng-model="valu"><i class="foundicon-heart"> {{(selecVal | noFractionCurrency) + "  Get this" }}</i> Perk</button>
+</form>
+    
+</section>
 </nav>
 </div>
 </div>
