@@ -5,6 +5,31 @@ input::-webkit-inner-spin-button {
     display: inline-block;
 }
 
+.top-bar .button, .top-bar input {
+line-height: inherit;
+font-size: inherit;
+height: 3em;
+padding: 0 10px;
+position: static;
+top: 0;
+}
+.prefix, .postfix {
+display: block;
+position: relative;
+z-index: 2;
+text-align: center;
+width: 100%;
+padding-top: 0;
+padding-bottom: 0;
+border-style: solid;
+border-width: 1px;
+overflow: hidden;
+font-size: inherit;
+height: 3em;
+line-height: inherit;
+}
+
+
 body {
     background: #fafafa url('/images/foggy.jpg') fixed;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -87,10 +112,14 @@ form.custom .custom.dropdown ul li {
 .list-fix {list-style-type: none;}
 .clear {clear:both;}
 
+.perks {display:block!important;}
 .perk-options {margin: 0px 0em 0 0;}
 .perc-bump {position: relative;
 bottom: 13px;
 text-shadow:0 0 5px #DFDEDD;}
+
+
+
 
 .panel h1, .panel h2, .panel h3, .panel h4, .panel h5, .panel h6, .panel p {
 color: #402016;
@@ -113,7 +142,7 @@ background: rgba(0, 0, 0, 0.65);
     .fico h4 { margin-bottom: 4px; }
     .fico hr { border: solid 1px; border-color: #bbb transparent transparent transparent; }
     .fico ul { list-style: none; overflow: hidden; margin-top: 20px; margin-bottom: 30px; }
-    .fico ul li { font-size: 28px; margin-bottom: 16px; vertical-align: center; }
+    .fico ul li { font-size: 28px; margin-bottom: 16px; vertical-align: middle; }
 
 
 /* font-face */
@@ -121,7 +150,7 @@ background: rgba(0, 0, 0, 0.65);
 @font-face { font-family: "SocialFoundicons"; src: url("../styles/fonts/social_foundicons.eot"); src: url("../styles/fonts/social_foundicons.eot?#iefix") format("embedded-opentype"), url("../styles/fonts/social_foundicons.woff") format("woff"), url("../styles/fonts/social_foundicons.ttf") format("truetype"), url("../styles/fonts/social_foundicons.svg#SocialFoundicons") format("svg"); font-weight: normal; font-style: normal; }
 @font-face { font-family: "AccessibilityFoundicons"; src: url("../styles/fonts/accessibility_foundicons.eot"); src: url("../styles/fonts/accessibility_foundicons.eot?#iefix") format("embedded-opentype"), url("../styles/fonts/accessibility_foundicons.woff") format("woff"), url("../styles/fonts/accessibility_foundicons.ttf") format("truetype"), url("../styles/fonts/accessibility_foundicons.svg#AccessibilityFoundicons") format("svg"); font-weight: normal; font-style: normal; }
  
-[class*="foundicon-"] { display: inline; width: auto; height: auto; line-height: inherit; vertical-align: baseline; background-image: none; background-position: 0 0; background-repeat: repeat; }
+[class*="foundicon-"] { display: inline; width: auto; height: auto; line-height: inherit; vertical-align: middle; background-image: none; background-position: 0 0; background-repeat: repeat; }
  
 /*                    */
 /* The multiple magic */

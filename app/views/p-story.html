@@ -2,7 +2,6 @@
   <img ng-src="{{snippet.img}}"> <h3>{{snippet.heading}}</h3> <p>{{snippet.content}}</p>
   </div>  
 
-
 <table>
   <div class="large-6 columns">
   <thead>
@@ -20,14 +19,16 @@
 </div>
 </table>
 
-
+<div ng-repeat="snippet1 in story1 | orderBy:'order' ">
+  <img ng-src="{{snippet1.img}}"> <h3>{{snippet1.heading}}</h3> <p>{{snippet1.content}}</p>
+  </div>    
 
 <div class="small-12 columns" ng-repeat="(key, items) in newItems">
   
       <table>
         <thead>
             <tr>
-              <th width="100%"><h5><i class="foundicon-paper-clip"></i> {{key}}</h5></th>
+              <th width="100%"><h5><i class="foundicon-paper-clip"></i> {{key | limitTo:1 | uppercase}}{{key | limitTo:(-key.length +1)}}</h5></th>
               <th style="text-align:right"><h5>Cost</h5></th>
             </tr>
         </thead>
@@ -41,6 +42,7 @@
   </div>
 
 
+<div class="small-12 columns">
 <table>
   <thead>
     <tr>
@@ -54,5 +56,27 @@
       <td style="text-align:right">{{item.cost | currency}}</td>
     </tr>
   </tbody>
-
 </table>
+</div>
+
+<div ng-repeat="snippet2 in story2 | orderBy:'order' ">
+  <img ng-src="{{snippet2.img}}"> <h3>{{snippet2.heading}}</h3> <p>{{snippet2.content}}</p>
+  </div>   
+
+<p>If you would like to become an even greater part of the Ecossentials story by putting your money to work with us, contact Sean at <a href="Sean@ecossentials.ca">Sean@ecossentials.ca</a> or 604-485-5256 for more details.</p>
+
+<h3>Thank You!</h3>
+
+<p>
+We are very excited about this opportunity as we know the store is ready for this next step, and we want to be 
+
+able to do it properly. That’s why we are asking for the help of our community, and of like-minded people who 
+
+want to see Ecossentials grow. We feel like there is so much potential and benefit to us all in what we’ve been 
+
+building together, and here is a chance for you to join us as the store continues to get bigger and better! We’re 
+
+calling it The Ecossentials Project; Ecossentials is more than ready for this growth, and your support will help 
+
+make it happen smoothly and efficiently.
+</p>

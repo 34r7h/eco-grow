@@ -2,7 +2,7 @@
 
 <div class="contain-to-grid sticky fixed">
 <nav class="top-bar" ng-controller="PPerksCtrl">
-<div class="small-4 columns"><a ng-href="/#/"><img src="/images/eco-logo.png"></a></div>
+<div class="small-4 columns"><a ng-href="/#/"><img src="images/eco-logo.png"></a></div>
 
 <section class="top-bar-section">
 <!--
@@ -15,35 +15,41 @@
       </li></ul>
       </div>
 -->
+<div class="small-2 columns right"><a style="width:100%" ng-href="" data-reveal-id="myModal" class="success button"><i class="foundicon-heart"></i> Perks</a></div>
+    
+ <div class="small-5 columns">
 
+     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="ng-pristine ng-valid">
+				<input type="hidden" name="cmd" value="_donations">
+				<input type="hidden" name="business" value="grow@ecossentials.ca">
+				<input type="hidden" name="item_name" value="A very helpful donation to Ecossentials expansion project">
+				<input type="hidden" name="item_number" value="0">
+				<input type="hidden" name="amount" value="{{arbNum}}">
+				<input type="hidden" name="quantity" value="1">
+				<input type="hidden" name="no_note" value="1">
+				<input type="hidden" name="currency_code" value="CAD">
+				
+				
+			
 
-<form class="form custom" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-  <div class="small-4 columns perk-options">
-
-    <input type="hidden" name="cmd" value="_xclick">
-    <input type="hidden" name="business" value="irth@3rdrockdesign.com">
-    <input type="hidden" name="lc" value="US">
-    <input type="hidden" name="item_name" value="Ecossentials Perk">
-    <input type="hidden" name="button_subtype" value="products">
-    <input type="hidden" name="no_note" value="0">
-    <input type="hidden" name="currency_code" value="CAD">
-    <input type="hidden" name="add" value="1">
-    <select name="os0" ng-model="selecVal" value="1">
-    <option value="" disabled selected >Choose your perk and claim it today!</option>
-    <option ng-repeat="perk in perks " value="{{perk.cost}}" id="{{perk.cost}}" ng-model="perk.cost">{{perk.name}} ${{perk.cost}}</option>
-    </select>
- 
-<input type="hidden" name="currency_code" value="CAD">
-
-
-<input ng-repeat="perk in perks" type="hidden" name="option_select{{$index}}" value="{{perk.cost}}">
-<input ng-repeat="perk in perks" type="hidden" name="option_amount{{$index}}" value="{{perk.cost}}">
-<input type="hidden" name="option_index" value="0">
-
+			
+     
+     
+     
+     <div class="row collapse"> 
+        <div class="small-6 columns">
+          <input type="number" ng-model="arbNum" placeholder="$ Amount to Gift"/>
+        </div>
+        <div class="small-6 columns">
+          <button ng-disabled="!arbNum" type="submit" class="success postfix" name="submit"><div class="ng-binding" ng-model="arbNum"><i class="foundicon-heart"></i> Donate {{arbNum | noFractionCurrency}} </div></button>
+        </div>  
+         
 </div>
 
-        <button ng-disabled="!selecVal" type="submit" class="small-4 columns success" name="submit" ng-model="valu"><i class="foundicon-heart"> {{(selecVal | noFractionCurrency) + "  Get this" }}</i> Perk</button>
 </form>
+
+</div>
+</div>
     
 </section>
 </nav>

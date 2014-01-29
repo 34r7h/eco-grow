@@ -195,6 +195,40 @@
   <code>Heading:</code> <h3 contentEditable ng-model="snippet.heading">{{snippet.heading}}</h3>
 	<img ng-src="{{snippet.img}}"><code>Img Url:</code><p contentEditable ng-model="snippet.img">{{snippet.img}}</p><code>Order:</code> <p contentEditable ng-model="snippet.order">{{snippet.order}} </p><code>Content:</code><p ng-model="snippet.content" contentEditable>{{snippet.content}}</p>
 	</div>
+  </div>
+
+  <h2>Story 1</h2>
+<div class="panel small-12 columns sticky ">
+<form>
+<input type="text" ng-model="imagination1.heading" placeholder="Heading" />
+	<input type="text" ng-model="imagination1.img" placeholder="image url" />
+  <textarea ng-model="imagination1.content" placeholder="Content" ></textarea>
+   <input type="number" ng-model="imagination1.order" placeholder="Order (highest on top)" />
+  <button class="success" ng-click="imagine1()">Add story</button>
+</form>
+</div>
+  <div ng-repeat="snippet in story1 | orderBy:'order' ">
+  <div class="small-6 columns">
+  <code>Heading:</code> <h3 contentEditable ng-model="snippet.heading">{{snippet.heading}}</h3>
+	<img ng-src="{{snippet.img}}"><code>Img Url:</code><p contentEditable ng-model="snippet.img">{{snippet.img}}</p><code>Order:</code> <p contentEditable ng-model="snippet.order">{{snippet.order}} </p><code>Content:</code><p ng-model="snippet.content" contentEditable>{{snippet.content}}</p>
+	</div>
+  </div>  
+
+  <h2>Story 2</h2>
+<div class="panel small-12 columns sticky ">
+<form>
+<input type="text" ng-model="imagination2.heading" placeholder="Heading" />
+	<input type="text" ng-model="imagination2.img" placeholder="image url" />
+  <textarea ng-model="imagination2.content" placeholder="Content" ></textarea>
+   <input type="number" ng-model="imagination2.order" placeholder="Order (highest on top)" />
+  <button class="success" ng-click="imagine2()">Add story</button>
+</form>
+</div>
+  <div ng-repeat="snippet in story2 | orderBy:'order' ">
+  <div class="small-6 columns">
+  <code>Heading:</code> <h3 contentEditable ng-model="snippet.heading">{{snippet.heading}}</h3>
+	<img ng-src="{{snippet.img}}"><code>Img Url:</code><p contentEditable ng-model="snippet.img">{{snippet.img}}</p><code>Order:</code> <p contentEditable ng-model="snippet.order">{{snippet.order}} </p><code>Content:</code><p ng-model="snippet.content" contentEditable>{{snippet.content}}</p>
+	</div>
   </div>     
            
                     
